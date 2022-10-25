@@ -243,11 +243,11 @@ r_{n} = ax_{n}+by_{n}$
 - $y_n$ → $y$
 
 <aside style="background-color: #393939; border-radius:15px">
-    <br>
+<br>
 
-    &nbsp;&nbsp;&nbsp;💡 $x_i =x_{i-2}-q_ix_{i-1}\newline\ \ \ \ \ \ \ \ 
-    y_i =y_{i-2}-q_iy_{i-1}$
-    <br></br>
+&nbsp;&nbsp;&nbsp;💡 $x_i =x_{i-2}-q_ix_{i-1}\newline\ \ \ \ \ \ \ \ 
+y_i =y_{i-2}-q_iy_{i-1}$
+<br></br>
 </aside>
 
 - c책
