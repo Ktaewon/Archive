@@ -121,9 +121,11 @@ $gcd(|a|, |b|) = gcd(a, b)$이기 때문에, $a ≥ b ≥ 0$ 이라고 가정해
         = gcd(480, 40) = 40
         
     
-    <aside>
-    💡 $d = gcd(a, b) = gcd(1000, 520) \newline 1000 = 1 \times 520 + 480 \newline 520 = 1 \times 480 + 40 \newline 480 = 12 \times 40 + 0 \newline \therefore d = gcd(1000, 520) = 40$
-    
+    <aside style="background-color: #393939; border-radius:15px">
+    <br>
+
+    &nbsp;&nbsp;&nbsp;💡 $d = gcd(a, b) = gcd(1000, 520) \newline \ \ \ \ \ \ \ \ 1000 = 1 \times 520 + 480 \newline \ \ \ \ \ \ \ \ 520 = 1 \times 480 + 40 \newline \ \ \ \ \ \ \ \ 480 = 12 \times 40 + 0 \newline \ \ \ \ \ \ \ \ \therefore d = gcd(1000, 520) = 40$
+    <br></br>
     </aside>
     
 2. d = gcd(a, b) = gcd(1160718174, 316258250)
@@ -189,13 +191,15 @@ $gcd(|a|, |b|) = gcd(a, b)$이기 때문에, $a ≥ b ≥ 0$ 이라고 가정해
 
 ![Untitled](./CH02%20Introduction%20to%20Number%20Theory/Untitled%205.png)
 
-<aside>
-💡 if $a \times b\equiv(a\times c)\ (mod\ n)$,
+<aside style="background-color: #393939; border-radius:15px">
+<br>
 
-then $b \equiv c\ (mod\ n)$.
+&nbsp;&nbsp;&nbsp;💡 if $a \times b\equiv(a\times c)\ (mod\ n)$,
 
-(단, a와 n이 서로소(relative prime)일 때만 성립)
+- then $b \equiv c\ (mod\ n)$.
 
+- (단, a와 n이 서로소(relative prime)일 때만 성립)
+<br></br>
 </aside>
 
 - 반례)
@@ -238,10 +242,12 @@ r_{n} = ax_{n}+by_{n}$
 - $x_n$ → $x$
 - $y_n$ → $y$
 
-<aside>
-💡 $x_i =x_{i-2}-q_ix_{i-1}\newline
-y_i =y_{i-2}-q_iy_{i-1}$
+<aside style="background-color: #393939; border-radius:15px">
+<br>
 
+&nbsp;&nbsp;&nbsp;💡 $x_i =x_{i-2}-q_ix_{i-1}\newline\ \ \ \ \ \ \ \ 
+y_i =y_{i-2}-q_iy_{i-1}$
+<br></br>
 </aside>
 
 - c책
@@ -286,3 +292,95 @@ y_i =y_{i-2}-q_iy_{i-1}$
                 
             4. $26x+9y=1, x=-1, y=2\newline
             \therefore 9^{-1}\ mod\ 26 = 3$
+
+# 2.4 Prime numbers(소수)
+
+---
+
+- $a = p_1^{a1}\times p_2^{a2}\times ...\times p_t^{at}$
+    - a는 정수
+    - 소수들의 지수승 형태로 소인수 분해 가능하다
+    - ex)
+        
+        $91 = 7^1\times13^1\newline
+        3600 = 2^4\times3^2\times5^2$
+        
+- 조금 더 일반화 하면,
+    
+    $a=\prod\limits_{p\in P} p^{a_p}$, $(a_p \geq0, \ P \ is\ the\ set\ of\ all\ prime\ numbers)$
+    
+    - $P = \{2, 3, 5, 6, 11, 13, ...\}$
+    - ex)
+        
+        $12: \{a_2=2, a_3=1\}\newline
+        18: \{a_2=1, a_3=2\}$
+        
+
+<aside style="background-color: #393939; border-radius:15px">
+<br>
+
+&nbsp;&nbsp;&nbsp;💡 
+$a=\prod\limits_{p\in P} p^{a_p}$
+$b=\prod\limits_{p\in P} p^{b_p}$
+
+- ⇒ $k = ab = \prod\limits_{p\in P} p^{k_p},\ \ k_p=a_p+b_p$
+- ex)
+    
+    $12\times18=\{a_2=2, a_3=1\} \times \{a_2=1, a_3=2\}=\{a_2=3, a_3=3\}=2^3\times3^3$
+    <br></br>
+</aside>
+
+<aside style="background-color: #393939; border-radius:15px">
+<br>
+
+&nbsp;&nbsp;&nbsp;💡 $a=\prod\limits_{p\in P} p^{a_p}$, $b=\prod\limits_{p\in P} p^{b_p}$
+
+- If $a | b$, then $a_p \leq b_p\ for\ all\ p.$
+- 즉, 각 지수가 크거나 같아야 한다.
+- ex)
+    
+    $a=12;\ b=36;\ 12|36\newline
+    12=2^2\times3;\ 36=2^2\times3^2\newline
+    a_2=2=b_2\newline
+    a_3=1\leq2=b_3$
+    
+    따라서, 부등식 $a_p\leq b_p$는 모두 소수에 대해 만족한다.
+    <br></br>
+</aside>
+
+<aside style="background-color: #393939; border-radius:15px">
+<br>
+
+&nbsp;&nbsp;&nbsp;💡 $\gcd{(a,b)}$: $k_p=min(a_p,b_p)\ for\ all\ p$
+
+- 각 지수의 minimum을 취한다.
+- 이렇게 하면 훨씬 쉽게 gcd를 구할 수 있다.
+    - 하지만, 더 좋은 알고리즘 X ⇒ 소인수 분해하는 작업에 많은 시간이 걸리기 때문이다.
+- ex)
+    
+    $\gcd(12, 18)=\gcd(2^3\times 3^1, 2^1\times3^2)=2^1\times3^1$
+    <br></br>
+</aside>
+
+# 2.5 Fermat’s And Euler’s Theorem
+
+---
+
+## 1) Fermat’s Theorem
+
+### (1) 설명
+
+- If a is NOT divisible by p(p로 나누어 떨어지지 않으면, 즉 서로소이면), then
+    - $a^{p-1}\equiv1\ (\mod p\ )$
+    - $a^p\equiv a(\mod p\ \ )$은 Fermat’s Theorem의 대체 식이다.
+
+⇒ 나중에 RSA 알고리즘 할 때 쓰이게 된다.
+
+### (2) 증명
+
+-생략-
+
+### (3) 예제
+
+- ex) $a= 7, p = 19$
+    - $7^{18}\equiv1(\mod 19\ )$
