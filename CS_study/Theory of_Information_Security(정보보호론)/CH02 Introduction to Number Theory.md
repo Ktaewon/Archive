@@ -121,12 +121,12 @@ $gcd(|a|, |b|) = gcd(a, b)$이기 때문에, $a ≥ b ≥ 0$ 이라고 가정해
         = gcd(480, 40) = 40
         
     
-    <aside style="background-color: #393939; border-radius:15px">
+    <div style="background-color: #393939; border-radius:15px">
     <br>
 
     &nbsp;&nbsp;&nbsp;💡 $d = gcd(a, b) = gcd(1000, 520) \newline \ \ \ \ \ \ \ \ 1000 = 1 \times 520 + 480 \newline \ \ \ \ \ \ \ \ 520 = 1 \times 480 + 40 \newline \ \ \ \ \ \ \ \ 480 = 12 \times 40 + 0 \newline \ \ \ \ \ \ \ \ \therefore d = gcd(1000, 520) = 40$
     <br></br>
-    </aside>
+    </div>
     
 2. d = gcd(a, b) = gcd(1160718174, 316258250)
     
